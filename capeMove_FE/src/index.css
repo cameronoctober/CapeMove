@@ -1,0 +1,49 @@
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --font-base: 16px;
+  --break-sm: 600px;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: var(--font-base);
+  background: #f5f5f5;
+}
+
+#app {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.offline-banner {
+  background: #ffcc00;
+  color: #000;
+  padding: var(--space-2);
+  text-align: center;
+  font-weight: 600;
+}
+
+.app-main {
+  padding-top: 64px;
+  padding-bottom: 56px;
+}
+
+@media (min-width: 600px) {
+  .app-main {
+    padding-bottom: 0;
+    padding-top: 72px;
+  }
+}
+
+/* Leaflet container default sizing */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}
