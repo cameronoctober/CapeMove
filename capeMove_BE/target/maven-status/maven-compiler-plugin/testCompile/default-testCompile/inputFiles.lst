@@ -1,0 +1,4 @@
+/workspaces/CapeMove/capeMove_BE/src/test/java/com/capetown/transit/config/SecurityConfigTest.java
+/workspaces/CapeMove/capeMove_BE/src/test/java/com/capetown/transit/controller/JourneyPlanningControllerTest.java
+/workspaces/CapeMove/capeMove_BE/src/test/java/com/capetown/transit/service/IncidentReportingServiceTest.java
+/workspaces/CapeMove/capeMove_BE/src/test/java/com/capetown/transit/service/FareCalculatorServiceTest.java

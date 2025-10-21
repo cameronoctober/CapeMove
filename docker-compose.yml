@@ -1,0 +1,44 @@
+version: '3.9'
+
+services:
+  backend:
+    build:
+      context: ./capeMove_BE
+      dockerfile: docker/Dockerfile
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: transitdb
+      DB_USERNAME: transituser
+      DB_PASSWORD: transitpass
+      EXTERNAL_API_KEY: your_api_key_here
+      SERVER_PORT: 8080
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
+
+  postgres:
+    image: postgres:14-alpine
+    environment:
+      POSTGRES_DB: transitdb
+      POSTGRES_USER: transituser
+      POSTGRES_PASSWORD: transitpass
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  frontend:
+    build:
+      context: ./capeMove_FE
+      dockerfile: Dockerfile
+    environment:
+      BACKEND_URL: http://backend:8080
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+
+volumes:
+  postgres-data:

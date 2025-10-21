@@ -15,8 +15,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-09-22T17:45:50+0200",
-    comments = "version: 1.5.3.Final, compiler: Eclipse JDT (IDE) 3.43.0.v20250819-1513, environment: Java 21.0.8 (Eclipse Adoptium)"
+    date = "2025-09-22T17:02:28+0000",
+    comments = "version: 1.5.3.Final, compiler: javac, environment: Java 17.0.16 (Ubuntu)"
 )
 @Component
 public class MappingConfigImpl implements MappingConfig {
@@ -29,8 +29,8 @@ public class MappingConfigImpl implements MappingConfig {
 
         JourneyPlanDTO.JourneyPlanDTOBuilder journeyPlanDTO = JourneyPlanDTO.builder();
 
-        journeyPlanDTO.destination( entity.getDestination() );
         journeyPlanDTO.origin( entity.getOrigin() );
+        journeyPlanDTO.destination( entity.getDestination() );
         journeyPlanDTO.plannedAt( entity.getPlannedAt() );
 
         return journeyPlanDTO.build();
@@ -44,8 +44,8 @@ public class MappingConfigImpl implements MappingConfig {
 
         JourneyPlan.JourneyPlanBuilder journeyPlan = JourneyPlan.builder();
 
-        journeyPlan.destination( dto.getDestination() );
         journeyPlan.origin( dto.getOrigin() );
+        journeyPlan.destination( dto.getDestination() );
         journeyPlan.plannedAt( dto.getPlannedAt() );
 
         return journeyPlan.build();
@@ -60,14 +60,14 @@ public class MappingConfigImpl implements MappingConfig {
         IncidentReportDTO.IncidentReportDTOBuilder incidentReportDTO = IncidentReportDTO.builder();
 
         incidentReportDTO.moderatedBy( entityModeratedById( entity ) );
-        incidentReportDTO.createdAt( entity.getCreatedAt() );
-        incidentReportDTO.description( entity.getDescription() );
         incidentReportDTO.id( entity.getId() );
         incidentReportDTO.latitude( entity.getLatitude() );
         incidentReportDTO.longitude( entity.getLongitude() );
-        incidentReportDTO.moderatedAt( entity.getModeratedAt() );
-        incidentReportDTO.status( entity.getStatus() );
+        incidentReportDTO.description( entity.getDescription() );
         incidentReportDTO.type( entity.getType() );
+        incidentReportDTO.status( entity.getStatus() );
+        incidentReportDTO.createdAt( entity.getCreatedAt() );
+        incidentReportDTO.moderatedAt( entity.getModeratedAt() );
 
         return incidentReportDTO.build();
     }
@@ -80,14 +80,14 @@ public class MappingConfigImpl implements MappingConfig {
 
         IncidentReport.IncidentReportBuilder incidentReport = IncidentReport.builder();
 
-        incidentReport.createdAt( dto.getCreatedAt() );
-        incidentReport.description( dto.getDescription() );
         incidentReport.id( dto.getId() );
         incidentReport.latitude( dto.getLatitude() );
         incidentReport.longitude( dto.getLongitude() );
-        incidentReport.moderatedAt( dto.getModeratedAt() );
-        incidentReport.status( dto.getStatus() );
+        incidentReport.description( dto.getDescription() );
         incidentReport.type( dto.getType() );
+        incidentReport.status( dto.getStatus() );
+        incidentReport.createdAt( dto.getCreatedAt() );
+        incidentReport.moderatedAt( dto.getModeratedAt() );
 
         incidentReport.moderatedBy( dto.getModeratedBy() != null ? userFromId(dto.getModeratedBy()) : null );
 
@@ -102,12 +102,12 @@ public class MappingConfigImpl implements MappingConfig {
 
         UserPreferenceDTO.UserPreferenceDTOBuilder userPreferenceDTO = UserPreferenceDTO.builder();
 
-        userPreferenceDTO.notifyOnDisruptions( entity.isNotifyOnDisruptions() );
-        userPreferenceDTO.notifyOnIncidents( entity.isNotifyOnIncidents() );
         List<String> list = entity.getPreferredModes();
         if ( list != null ) {
             userPreferenceDTO.preferredModes( new ArrayList<String>( list ) );
         }
+        userPreferenceDTO.notifyOnIncidents( entity.isNotifyOnIncidents() );
+        userPreferenceDTO.notifyOnDisruptions( entity.isNotifyOnDisruptions() );
 
         return userPreferenceDTO.build();
     }
@@ -120,15 +120,15 @@ public class MappingConfigImpl implements MappingConfig {
 
         UserPreference.UserPreferenceBuilder userPreference = UserPreference.builder();
 
-        if ( dto.getNotifyOnDisruptions() != null ) {
-            userPreference.notifyOnDisruptions( dto.getNotifyOnDisruptions() );
+        List<String> list = dto.getPreferredModes();
+        if ( list != null ) {
+            userPreference.preferredModes( new ArrayList<String>( list ) );
         }
         if ( dto.getNotifyOnIncidents() != null ) {
             userPreference.notifyOnIncidents( dto.getNotifyOnIncidents() );
         }
-        List<String> list = dto.getPreferredModes();
-        if ( list != null ) {
-            userPreference.preferredModes( new ArrayList<String>( list ) );
+        if ( dto.getNotifyOnDisruptions() != null ) {
+            userPreference.notifyOnDisruptions( dto.getNotifyOnDisruptions() );
         }
 
         return userPreference.build();

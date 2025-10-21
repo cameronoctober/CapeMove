@@ -1,0 +1,4 @@
+com/capetown/transit/config/SecurityConfigTest.class
+com/capetown/transit/service/FareCalculatorServiceTest.class
+com/capetown/transit/controller/JourneyPlanningControllerTest.class
+com/capetown/transit/service/IncidentReportingServiceTest.class
