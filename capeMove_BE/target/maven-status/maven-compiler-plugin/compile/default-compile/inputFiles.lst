@@ -17,6 +17,7 @@
 /workspaces/CapeMove/capeMove_BE/src/main/java/com/capetown/transit/dto/FareCalculationRequestDTO.java
 /workspaces/CapeMove/capeMove_BE/src/main/java/com/capetown/transit/repository/JourneyPlanRepository.java
 /workspaces/CapeMove/capeMove_BE/src/main/java/com/capetown/transit/entity/UserPreference.java
+/workspaces/CapeMove/capeMove_BE/src/main/java/com/capetown/transit/config/InMemoryUserDetailsServiceConfig.java
 /workspaces/CapeMove/capeMove_BE/src/main/java/com/capetown/transit/repository/IncidentReportRepository.java
 /workspaces/CapeMove/capeMove_BE/src/main/java/com/capetown/transit/TransitCompanionApplication.java
 /workspaces/CapeMove/capeMove_BE/src/main/java/com/capetown/transit/exception/GlobalExceptionHandler.java

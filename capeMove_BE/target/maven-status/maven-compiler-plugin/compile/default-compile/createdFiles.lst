@@ -15,6 +15,7 @@ com/capetown/transit/TransitCompanionApplication.class
 com/capetown/transit/entity/Role.class
 com/capetown/transit/entity/FareRule.class
 com/capetown/transit/dto/FareCalculationRequestDTO$FareCalculationRequestDTOBuilder.class
+com/capetown/transit/config/InMemoryUserDetailsServiceConfig.class
 com/capetown/transit/service/JourneyPlanningService.class
 com/capetown/transit/config/SecurityConfig.class
 com/capetown/transit/entity/JourneyPlan$JourneyPlanBuilder.class

@@ -85,11 +85,6 @@
             <artifactId>hibernate-validator</artifactId>
         </dependency>
 
-        <!-- Hibernate Core (explicit) -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-        </dependency>
 
         <!-- BCrypt for password encryption -->
         <dependency>
@@ -103,11 +98,6 @@
             <artifactId>flyway-core</artifactId>
         </dependency>
 
-        <!-- Redis for caching (optional, recommended for prod) -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
 
         <!-- RestTemplate (Spring Web dependency covers this, but explicit for clarity) -->
         <dependency>
